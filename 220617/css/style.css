@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.point .inner {
+  max-width: 1200px;
+  padding: 100px 40px;
+  margin: auto;
+}
+
+.point .inner ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+
+.point .inner ul li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 30px;
+  background: #fff8e0;
+  border-radius: 20px;
+  -webkit-box-shadow: 10px 10px 30px -30px rgba(0, 0, 0, 0.3);
+          box-shadow: 10px 10px 30px -30px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.point .inner ul li .number {
+  font-size: 60px;
+  width: 1em;
+  height: 1em;
+  color: #000;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+}
+
+.point .inner ul li .number .bubble {
+  width: 100%;
+  height: 100%;
+  background: #fee554;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-animation: number_bubble 0.5s both linear;
+          animation: number_bubble 0.5s both linear;
+}
+
+@-webkit-keyframes number_bubble {
+  0% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  75% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@keyframes number_bubble {
+  0% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  75% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+.point .inner ul li .number .bubble::after {
+  content: "";
+  display: block;
+  width: 0.3em;
+  height: 0.3em;
+  background: #fee554;
+  border-radius: 0.02em;
+  -webkit-transform: skew(15deg, 15deg);
+          transform: skew(15deg, 15deg);
+  position: absolute;
+  bottom: 0.05em;
+  right: 0.05em;
+}
+
+.point .inner ul li .number .txt {
+  width: 100%;
+  font-size: 0.15em;
+  font-weight: 800;
+  text-align: center;
+  position: absolute;
+  top: 0.3em;
+  left: 0;
+}
+
+.point .inner ul li .number .txt span {
+  display: inline-block;
+  padding: 0 0.15em;
+  position: relative;
+  -webkit-animation: number_txt 0.2s both linear;
+          animation: number_txt 0.2s both linear;
+}
+
+@-webkit-keyframes number_txt {
+  0% {
+    opacity: 0;
+    top: 0.5em;
+  }
+  80% {
+    opacity: 1;
+    top: -0.2em;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes number_txt {
+  0% {
+    opacity: 0;
+    top: 0.5em;
+  }
+  80% {
+    opacity: 1;
+    top: -0.2em;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.point .inner ul li .number .txt span:nth-child(1) {
+  -webkit-transform: rotate(-35deg) translateY(0.7em) translateX(-0.15em);
+          transform: rotate(-35deg) translateY(0.7em) translateX(-0.15em);
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.point .inner ul li .number .txt span:nth-child(2) {
+  -webkit-transform: rotate(-20deg) translateY(0.2em);
+          transform: rotate(-20deg) translateY(0.2em);
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.point .inner ul li .number .txt span:nth-child(3) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.point .inner ul li .number .txt span:nth-child(4) {
+  -webkit-transform: rotate(20deg) translateY(0.2em);
+          transform: rotate(20deg) translateY(0.2em);
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.point .inner ul li .number .txt span:nth-child(5) {
+  -webkit-transform: rotate(35deg) translateY(0.7em) translateX(0.15em);
+          transform: rotate(35deg) translateY(0.7em) translateX(0.15em);
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.point .inner ul li .number::after {
+  content: attr(data-number);
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 0.5em;
+  font-weight: 800;
+  position: absolute;
+  top: 0.15em;
+  left: 0;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-animation: number_no 0.5s both linear 0.1s;
+          animation: number_no 0.5s both linear 0.1s;
+}
+
+@-webkit-keyframes number_no {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: rotate(6deg);
+            transform: rotate(6deg);
+  }
+  50% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  75% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@keyframes number_no {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: rotate(6deg);
+            transform: rotate(6deg);
+  }
+  50% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  75% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+.point .inner ul li h3 {
+  text-align: center;
+  color: #ff851f;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+.point .inner ul li .txt p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+/*# sourceMappingURL=style.css.map */
